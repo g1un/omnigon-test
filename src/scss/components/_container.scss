@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    max-width: 1524px;
+    min-height: 100vh;
+
+    @include md() {
+        padding-top: 63px;
+    }
+}

@@ -1,0 +1,103 @@
+.switch {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 0;
+
+    &__title {
+        margin-right: 32px;
+        @extend .txt-title-2;
+        color: rgba(0,0,0,.9);;
+    }
+
+    input {
+        display: none;
+
+        &:checked + label {
+
+            .switch__bar {
+                background: $mine-shaft;
+            }
+
+            .switch__tumbler {
+                left: 21px;
+            }
+
+            &:active {
+
+                .switch {
+
+                    &__tumbler {
+                        left: 17px;
+                    }
+
+                    &__bar {
+                        background: $lightning-yellow;
+                    }
+                }
+            }
+        }
+    }
+
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 3px;
+        min-height: 24px;
+        cursor: pointer;
+        transition: all .25s;
+        position: relative;
+
+        .switch__bar {
+            display: inline-block;
+            vertical-align: top;
+            width: 40px;
+            height: 20px;
+            margin: 5px 0;
+            background: rgba(0,0,0,.05);
+            border-radius: 20px;
+            transition: all .25s;
+        }
+
+        .switch__tumbler {
+            position: absolute;
+            top: 50%;
+            margin-top: -12px;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow:
+                0 1px 2px 0 rgba(0,0,0,.2),
+                0 1px 4px 0 rgba(0,0,0,.1),
+                0 0 1px 0 rgba(0,0,0,.2);
+            transition: all .25s;
+        }
+
+        &:hover {
+
+            .switch__tumbler {
+                box-shadow: 0 0 0 4px rgba(255,216,64,.6);
+                outline: none;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+
+            .switch {
+
+                &__tumbler {
+                    width: 28px;
+                }
+
+                &__bar {
+                    background: rgba(0,0,0,.1);
+                }
+            }
+        }
+    }
+}

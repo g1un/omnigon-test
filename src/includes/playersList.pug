@@ -1,0 +1,64 @@
+mixin playersList()
+    ul.players-list(class=attributes.class)
+        -
+            var filledItems = [
+                {
+                    img: 'derozan@2x.jpg',
+                    name: 'DeMar DeRozan'
+                },
+                {
+                    img: 'curry@2x.jpg',
+                    name: 'Stephen Curry'
+                },
+                {
+                    img: 'durant@2x.jpg',
+                    name: 'Kevin Durant'
+                },
+                {
+                    img: 'harden@2x.jpg',
+                    name: 'James Harden'
+                },
+                {
+                    img: 'jordan@2x.jpg',
+                    name: 'DeAndre Jordan'
+                },
+                {
+                    img: 'westbrook@2x.jpg',
+                    name: 'Russell Westbrook'
+                },
+                {
+                    img: 'parsons@2x.jpg',
+                    name: 'Chandler Parsons'
+                },
+                {
+                    img: 'faried@2x.jpg',
+                    name: 'Kenneth Faried'
+                },
+                {
+                    img: 'hayward@2x.jpg',
+                    name: 'Gordon Hayward'
+                },
+                {
+                    img: 'conley@2x.jpg',
+                    name: 'Mike Conley'
+                },
+                {
+                    img: 'howard@2x.jpg',
+                    name: 'Dwight Howard'
+                },
+                {
+                    img: 'placeholder@2x.jpg',
+                    name: 'Trey Burke'
+                }
+            ]
+        each val in filledItems
+            li.players-list__item
+                button.players-list__btn
+                    .players-list__image(style=`background-image: url("img/${val.img}")`)
+                    span= val.name
+        -var i = 0
+        while i < 12
+            li.players-list__item
+                button.players-list__btn._empty
+                    .players-list__image
+            -i++

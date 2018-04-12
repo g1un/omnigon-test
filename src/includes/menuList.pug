@@ -1,0 +1,13 @@
+mixin menuList(list)
+    .menu-list(class=attributes.class)
+        h4.txt-title-1.menu-list__title= list.title
+        ul.menu-list__ul
+            each val in list.items
+                li.menu-list__item
+                    button.menu-list__btn(class=`${val.active ? '_active' : ''}`)
+                        .menu-list__btn-wrapper
+                            if val.img
+                                .menu-list__image(style=`background-image: url("img/${val.img}")`)
+                            else
+                                .menu-list__image
+                            span.txt-title-2= val.btn

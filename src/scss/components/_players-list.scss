@@ -1,0 +1,134 @@
+.players-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include md() {
+        max-width: none;
+    }
+
+    &__item {
+        flex: 1 1 25%;
+        display: flex;
+        justify-content: center;
+        max-width: 25%;
+        margin-bottom: 28px;
+        padding: 0 8px;
+
+        @include lg() {
+            flex: 1 1 33.333%;
+            max-width: 33.333%;
+        }
+
+        @include sm() {
+            flex: 1 1 50%;
+            max-width: 50%;
+        }
+    }
+
+    &__image {
+        margin-bottom: 4px;
+        width: 100%;
+        padding-bottom: 100%;
+        border-radius: 50%;
+        border: solid 1px rgba(0,0,0,.05);
+        background-color: rgba(0,0,0,.05);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: background-color .25s, opacity .25s;
+        position: relative;
+        overflow: hidden;
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+        &:before {
+            opacity: 0;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,.25);
+            transition: opacity .25s;
+            pointer-events: none;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+
+        &:not(._empty) {
+
+            &:hover {
+
+                .players-list__image {
+
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        @include xlg() {
+            max-width: 148px;
+        }
+
+        @include lg() {
+            max-width: 164px;
+        }
+
+        span {
+            @extend .txt-title-2;
+            color: rgba(0,0,0,.9);
+            text-align: center;
+        }
+
+        &._empty {
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                background: rgba(0,0,0,.6);
+            }
+
+            &:before {
+                width: 1px;
+                height: 9px;
+            }
+
+            &:after {
+                width: 9px;
+                height: 1px;
+            }
+
+            .players-list {
+
+                &__image {
+                    border: none;
+                    box-shadow: 0 0 1px 0 rgba(0,0,0,.4);
+                    transition: background-color .25s;
+                }
+            }
+
+            &:hover {
+
+                .players-list {
+
+                    &__image {
+                        background-color: rgba(0,0,0,.1);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.players {
+    padding: 28px 8px 28px 26px;
+    display: flex;
+    align-items: flex-start;
+
+    @include md() {
+        padding: 14px 8px;
+        display: block;
+    }
+
+    &__note {
+        position: relative;
+        padding-left: 22px;
+        margin-right: 8px;
+        min-width: 190px;
+        @extend .txt-title-2;
+        color: $jungle-green;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: 0;
+            transform: rotate(-45deg);
+            width: 11px;
+            height: 4px;
+            border-left: 1px solid $jungle-green;
+            border-bottom: 1px solid $jungle-green;
+        }
+
+        @include md() {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        flex: 1 1 auto;
+    }
+}

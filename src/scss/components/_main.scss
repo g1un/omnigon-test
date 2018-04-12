@@ -1,0 +1,21 @@
+.main {
+    margin: 32px;
+    flex: 1 1 952px;
+    align-self: flex-start;
+    border-radius: 8px;
+    background-color: rgba(#fff,.9);
+    box-shadow: 0 32px 64px 0 rgba(#000,.05);
+
+    @include md() {
+        margin: 16px;
+    }
+
+    &__controls {
+        padding: 28px 48px 27px;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+
+        @include md() {
+            padding: 14px 24px;
+        }
+    }
+}

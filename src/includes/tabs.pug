@@ -1,0 +1,5 @@
+mixin tabs()
+    ul.tabs(class=attributes.class)
+        each val, i in ['Detail', 'Content', 'Ads', 'Data capture', 'Look and feel']
+            li.tabs__item
+                button.tabs__btn(class=`${i === 1 ? '_active' : ''}`)= val

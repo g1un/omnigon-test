@@ -1,0 +1,51 @@
+//fonts
+@mixin r-400 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+@mixin r-500 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+@mixin r-700 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+//media
+//xlg
+@mixin xlg() {
+    @media (max-width: ($xlg - 1)+px) {
+        @content
+    }
+}
+
+//lg
+@mixin lg() {
+    @media (max-width: ($lg - 1)+px) {
+        @content
+    }
+}
+
+//md
+@mixin md() {
+    @media (max-width: ($md - 1)+px) {
+        @content
+    }
+}
+
+//sm
+@mixin sm() {
+    @media (max-width: ($sm - 1)+px) {
+        @content
+    }
+}
+
+//xs
+@mixin xs() {
+    @media (max-width: $xs+px) {
+        @content
+    }
+}

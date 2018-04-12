@@ -1,0 +1,7 @@
+mixin main()
+    section.main
+        +tabs().main__tabs
+        .main__controls
+            +switch('Present in random order', 'random', true).main__switch
+        .main__content
+            +players()

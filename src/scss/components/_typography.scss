@@ -1,0 +1,13 @@
+.txt-title-1 {
+    @include r-500();
+    font-size: 12px;
+    line-height: 2;
+    color: rgba(#fff,.9);
+}
+
+.txt-title-2 {
+    @include r-400();
+    font-size: 14px;
+    line-height: 1.71;
+    color: #fff;
+}

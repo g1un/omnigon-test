@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(48deg, #eeeeee, #fafafa);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}

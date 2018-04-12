@@ -1,0 +1,62 @@
+mixin menu()
+    section.menu.js-menu
+        header.menu__header
+            button.menu__sandwich.js-sandwich
+            .menu__title Omnigon
+        .menu__main
+            .menu__wrapper
+                button.btn.menu__btn New vote
+                .menu__lists
+                    -
+                        var lists = [
+                            {
+                                title: 'Draft',
+                                items: [
+                                    {
+                                        img: '',
+                                        btn: 'New vote',
+                                        active: true
+                                    },
+                                    {
+                                        img: 'image@2x.png',
+                                        btn: 'Serie A Footballer of the Year'
+                                    }
+                                ]
+                            },
+                            {
+                                title: 'Active',
+                                items: [
+                                    {
+                                        img: 'image-1@2x.png',
+                                        btn: 'Unleash a Jaguar'
+                                    },
+                                    {
+                                        img: 'image-2@2x.png',
+                                        btn: 'Choose best Wimbledon player and win tickets to the finals'
+                                    },
+                                    {
+                                        img: 'image-3@2x.png',
+                                        btn: '2015 Music Moments'
+                                    }
+                                ]
+                            },
+                            {
+                                title: 'Closed',
+                                items: [
+                                    {
+                                        img: 'image-4@2x.png',
+                                        btn: 'All time greats'
+                                    },
+                                    {
+                                        img: 'image-5@2x.png',
+                                        btn: 'Insane Dunks'
+                                    },
+                                    {
+                                        img: 'image-6@2x.png',
+                                        btn: '2014 Music Moments'
+                                    }
+                                ]
+                            }
+                        ]
+                    each val in lists
+                        +menuList(val).menu__list

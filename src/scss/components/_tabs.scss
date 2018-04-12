@@ -1,0 +1,52 @@
+.tabs {
+    display: flex;
+    max-width: calc(100vw - 64px);
+    overflow: auto;
+
+    @include md() {
+        max-width: calc(100vw - 32px);
+    }
+
+    &__item {
+        flex: 1 1 100%;
+        padding: 0 10px;
+        text-align: center;
+        position: relative;
+    }
+
+    &__btn {
+        display: inline-block;
+        vertical-align: top;
+        @include r-400();
+        font-size: 14px;
+        line-height: 48px;
+        text-align: center;
+        color: rgba(0,0,0,.9);
+        white-space: nowrap;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(0,0,0,.1);
+            transition: background .25s;
+        }
+
+        &._active,
+        &:hover {
+
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: $mine-shaft;
+            }
+        }
+    }
+}

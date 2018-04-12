@@ -1,0 +1,8 @@
+mixin switch(title, id, checked)
+    .switch(class=attributes.class)
+        if title
+            span.switch__title= title
+        input(type='checkbox', name=`${id}`, id=`${id}`, checked=!!checked)
+        label(for=`${id}`, tabindex='0')
+            .switch__bar
+            .switch__tumbler
